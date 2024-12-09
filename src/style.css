@@ -1,34 +1,35 @@
 body {
-  margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  display: grid;
-  height: 100vh;
-  /* grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 2fr 1fr;
-  grid-template-areas:
-    "a a a a"
-    "b b b c"
-    "d d d d"; */
-  grid-template:
-    "header header header header" 1fr
-    "section section section menu" 2fr
-    "footer footer footer footer" 1fr / 1fr 1fr 1fr 1fr;
 }
 
-header {
-  background-color: aqua;
-  grid-area: header;
+.father {
+  display: grid;
+  grid-template-columns: [cucumber] 100px [potato] 200px [banana] 50px [brocoli];
+  grid-template-rows: [korea] 200px [thailand] 100px [greece];
+  row-gap: 10px;
+  column-gap: 20px;
 }
-section {
-  background-color: coral;
-  grid-area: section;
+
+.child {
+  background-color: tomato;
+  display: flex;
+  color: white;
+  font-size: 28px;
+  justify-content: center;
+  align-items: center;
 }
-aside {
-  background-color: forestgreen;
-  grid-area: menu;
+.child:first-child {
+  /* grid-row-start: 1;
+  grid-row-end: -1;
+  grid-row: korea / greece;
+  grid-row: span 2; */
+  background-color: khaki;
 }
-footer {
-  background-color: deeppink;
-  grid-area: footer;
+.child:last-child {
+  /* grid-column-start: 2;
+  grid-column-end: -1;
+  grid-column: potato / brocoli; */
+  background-color: turquoise;
+  grid-column: potato / span 2;
 }
